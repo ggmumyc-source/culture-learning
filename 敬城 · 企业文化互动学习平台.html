@@ -1422,8 +1422,10 @@
             border-color: var(--gold-300);
         }
         .values-full-card .vfc-icon {
-            font-size: 2.6rem;
-            margin-bottom: 8px;
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin: 0 auto 8px;
             display: block;
         }
         .values-full-card h3 {
@@ -1490,13 +1492,15 @@
             z-index: 10;
         }
         .value-card .v-icon {
-            font-size: 2.8rem;
-            margin-bottom: 12px;
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+            margin: 0 auto 12px;
             transition: var(--transition);
             display: block;
         }
         .value-card:hover .v-icon {
-            transform: scale(1.2) rotate(-5deg);
+            transform: scale(1.1) rotate(-3deg);
         }
         .value-card h3 {
             color: var(--blue-900);
@@ -1557,6 +1561,15 @@
             font-size: 1.7rem;
             font-weight: 900;
             letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+        }
+        .slogan-card .slogan-icon {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            vertical-align: middle;
+            margin-right: 10px;
             position: relative;
             z-index: 1;
         }
@@ -2305,13 +2318,13 @@
 <!-- Vision & Mission - full width -->
 <div class="values-full-cards" data-doubao-translate-traverse-mark="1">
 <div class="values-full-card" style="background:linear-gradient(135deg,#fef9f0,#fff);" data-doubao-translate-traverse-mark="1">
-<span class="vfc-icon" data-doubao-translate-traverse-mark="1">🌍</span>
+<img class="vfc-icon" src="./敬城 · 企业文化互动学习平台_files/value-vision.png" alt="愿景" data-doubao-translate-traverse-mark="1">
 <h3 data-doubao-translate-traverse-mark="1">愿景 Vision</h3>
 <p class="vfc-desc" data-doubao-translate-traverse-mark="1">成为全球最值得信赖的泛家居数字化出海平台</p>
 <p class="vfc-en" data-doubao-translate-traverse-mark="1">To become the world's most trusted digital platform for the global expansion of the pan-home furnishing industry.</p>
 </div>
 <div class="values-full-card" style="background:linear-gradient(135deg,#f4f7fc,#fff);" data-doubao-translate-traverse-mark="1">
-<span class="vfc-icon" data-doubao-translate-traverse-mark="1">🎯</span>
+<img class="vfc-icon" src="./敬城 · 企业文化互动学习平台_files/value-mission.png" alt="使命" data-doubao-translate-traverse-mark="1">
 <h3 data-doubao-translate-traverse-mark="1">使命 Mission</h3>
 <p class="vfc-desc" data-doubao-translate-traverse-mark="1">为全球客户创造美好空间</p>
 <p class="vfc-en" data-doubao-translate-traverse-mark="1">To create better spaces for customers worldwide.</p>
@@ -2319,14 +2332,14 @@
 </div>
 <!-- 5 Values - centered wrapping flex -->
 <div class="values-flex" id="values-flex" data-doubao-translate-traverse-mark="1">
-<div class="value-card" data-doubao-translate-traverse-mark="1"><span class="v-icon" data-doubao-translate-traverse-mark="1">🤝</span><h3 data-doubao-translate-traverse-mark="1">客户第一</h3><p class="v-en" data-doubao-translate-traverse-mark="1">Customer First</p><p data-doubao-translate-traverse-mark="1">客户价值是所有工作的起点，项目交付是检验工作的终点。</p></div>
-<div class="value-card" data-doubao-translate-traverse-mark="1"><span class="v-icon" data-doubao-translate-traverse-mark="1">🛡️</span><h3 data-doubao-translate-traverse-mark="1">诚信守正</h3><p class="v-en" data-doubao-translate-traverse-mark="1">Integrity</p><p data-doubao-translate-traverse-mark="1">对客户诚信，对伙伴诚信，对组织诚信。真实·透明·合规·守信。</p></div>
-<div class="value-card" data-doubao-translate-traverse-mark="1"><span class="v-icon" data-doubao-translate-traverse-mark="1">🚀</span><h3 data-doubao-translate-traverse-mark="1">创业奋斗</h3><p class="v-en" data-doubao-translate-traverse-mark="1">Entrepreneurial Spirit</p><p data-doubao-translate-traverse-mark="1">保持创业者心态，主动承担结果，勇于走出舒适区、突破能力边界。</p></div>
-<div class="value-card" data-doubao-translate-traverse-mark="1"><span class="v-icon" data-doubao-translate-traverse-mark="1">💡</span><h3 data-doubao-translate-traverse-mark="1">创新进化</h3><p class="v-en" data-doubao-translate-traverse-mark="1">Innovation &amp; Evolution</p><p data-doubao-translate-traverse-mark="1">用数字化、AI和组织创新重构泛家居出海效率，坚持自我批判、持续进化。</p></div>
-<div class="value-card" data-doubao-translate-traverse-mark="1"><span class="v-icon" data-doubao-translate-traverse-mark="1">🏔️</span><h3 data-doubao-translate-traverse-mark="1">长期主义</h3><p class="v-en" data-doubao-translate-traverse-mark="1">Long-Termism</p><p data-doubao-translate-traverse-mark="1">坚持做难而正确的事，不追逐短期利益，不透支客户信任。</p></div>
+<div class="value-card" data-doubao-translate-traverse-mark="1"><img class="v-icon" src="./敬城 · 企业文化互动学习平台_files/value-customer.png" alt="客户第一" data-doubao-translate-traverse-mark="1"><h3 data-doubao-translate-traverse-mark="1">客户第一</h3><p class="v-en" data-doubao-translate-traverse-mark="1">Customer First</p><p data-doubao-translate-traverse-mark="1">客户价值是所有工作的起点，项目交付是检验工作的终点。</p></div>
+<div class="value-card" data-doubao-translate-traverse-mark="1"><img class="v-icon" src="./敬城 · 企业文化互动学习平台_files/value-integrity.png" alt="诚信守正" data-doubao-translate-traverse-mark="1"><h3 data-doubao-translate-traverse-mark="1">诚信守正</h3><p class="v-en" data-doubao-translate-traverse-mark="1">Integrity</p><p data-doubao-translate-traverse-mark="1">对客户诚信，对伙伴诚信，对组织诚信。真实·透明·合规·守信。</p></div>
+<div class="value-card" data-doubao-translate-traverse-mark="1"><img class="v-icon" src="./敬城 · 企业文化互动学习平台_files/value-entrepreneurship.png" alt="创业奋斗" data-doubao-translate-traverse-mark="1"><h3 data-doubao-translate-traverse-mark="1">创业奋斗</h3><p class="v-en" data-doubao-translate-traverse-mark="1">Entrepreneurial Spirit</p><p data-doubao-translate-traverse-mark="1">保持创业者心态，主动承担结果，勇于走出舒适区、突破能力边界。</p></div>
+<div class="value-card" data-doubao-translate-traverse-mark="1"><img class="v-icon" src="./敬城 · 企业文化互动学习平台_files/value-innovation.png" alt="创新进化" data-doubao-translate-traverse-mark="1"><h3 data-doubao-translate-traverse-mark="1">创新进化</h3><p class="v-en" data-doubao-translate-traverse-mark="1">Innovation &amp; Evolution</p><p data-doubao-translate-traverse-mark="1">用数字化、AI和组织创新重构泛家居出海效率，坚持自我批判、持续进化。</p></div>
+<div class="value-card" data-doubao-translate-traverse-mark="1"><img class="v-icon" src="./敬城 · 企业文化互动学习平台_files/value-longterm.png" alt="长期主义" data-doubao-translate-traverse-mark="1"><h3 data-doubao-translate-traverse-mark="1">长期主义</h3><p class="v-en" data-doubao-translate-traverse-mark="1">Long-Termism</p><p data-doubao-translate-traverse-mark="1">坚持做难而正确的事，不追逐短期利益，不透支客户信任。</p></div>
 </div>
 <!-- Slogan -->
-<div class="slogan-card" data-doubao-translate-traverse-mark="1"><h3 data-doubao-translate-traverse-mark="1">✨ Build the Future, Together</h3><p class="s-en" data-doubao-translate-traverse-mark="1">共建未来，携手同行</p></div>
+<div class="slogan-card" data-doubao-translate-traverse-mark="1"><h3 data-doubao-translate-traverse-mark="1"><img class="slogan-icon" src="./敬城 · 企业文化互动学习平台_files/value-slogan.png" alt="slogan" data-doubao-translate-traverse-mark="1"> Build the Future, Together</h3><p class="s-en" data-doubao-translate-traverse-mark="1">共建未来，携手同行</p></div>
 <div style="text-align:center;" data-doubao-translate-traverse-mark="1">
 <button class="btn-primary" id="values-done-btn" onclick="cv()" data-doubao-translate-traverse-mark="1">我已阅读完毕，开始答题 →</button>
 </div>
