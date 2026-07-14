@@ -2229,6 +2229,107 @@
                 font-size: 0.78rem;
             }
         }
+        /* Participant form & summary */
+        .participant-form {
+            max-width: 520px;
+            margin: 0 auto;
+            background: var(--surface);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            box-shadow: var(--shadow-md);
+        }
+        .form-group {
+            margin-bottom: 22px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--gray-800);
+            font-size: 0.95rem;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            font-size: 1rem;
+            color: var(--gray-800);
+            background: var(--bg);
+            transition: var(--transition);
+            box-sizing: border-box;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--gold-400);
+            box-shadow: 0 0 0 3px rgba(200,150,62,0.12);
+        }
+        .participant-banner {
+            background: linear-gradient(135deg, #fef9f0, #fff8e7);
+            border: 1px dashed var(--gold-300);
+            border-radius: var(--radius-lg);
+            padding: 12px 18px;
+            margin: 12px auto 18px;
+            max-width: 680px;
+            text-align: center;
+            color: var(--gold-700);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .game-panel#panel-summary {
+            display: none;
+        }
+        .game-panel#panel-summary.active {
+            display: block;
+        }
+        .final-summary-card {
+            max-width: 640px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #fef9f0 0%, #fff 100%);
+            border: 1px solid var(--gold-200);
+            border-radius: var(--radius-xl);
+            padding: 40px 32px;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+        .final-summary-card .summary-icon {
+            font-size: 4rem;
+            margin-bottom: 12px;
+        }
+        .final-summary-card h3 {
+            font-size: 1.6rem;
+            color: var(--gold-700);
+            margin-bottom: 8px;
+        }
+        .participant-result-name {
+            font-size: 1.15rem;
+            color: var(--gray-700);
+            margin-bottom: 24px;
+        }
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+            margin: 28px 0;
+        }
+        .stat-box {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 18px 12px;
+            border: 1px solid var(--gray-100);
+        }
+        .stat-value {
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: var(--gold-600);
+            line-height: 1.2;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            margin-top: 6px;
+        }
     </style>
 <link href="https://www.tabbit-ai.com/favicon.ico" id="tabbit-artifact-favicon" rel="icon">
 </head>
@@ -2282,7 +2383,7 @@
             <div class="tl-item visible" id="tl-item-2" style="animation-delay:0.24s" data-doubao-translate-traverse-mark="1">
               <div class="tl-date-badge" data-doubao-translate-traverse-mark="1"><span class="year" data-doubao-translate-traverse-mark="1">2017</span><span class="month" data-doubao-translate-traverse-mark="1">成立</span></div>
               <div class="tl-dot" data-doubao-translate-traverse-mark="1"></div>
-              <div class="tl-card" data-doubao-translate-traverse-mark="1"><span class="card-icon" data-doubao-translate-traverse-mark="1">🎉</span><h3 data-doubao-translate-traverse-mark="1">敬城建材正式成立</h3><p data-doubao-translate-traverse-mark="1">随着豪灯城业务日趋成熟，George 启动了品牌升级计划。2017 年，<span class="highlight-text">敬城建材</span>正式宣布成立，定位为面向海外客户的一站式建材产品与服务提供商。同期确定意美家市场 24 栋 2 楼为未来总部选址，开启了从本地零售到国际化服务的第一步。</p><div class="card-footer" data-doubao-translate-traverse-mark="1">品牌升级 · 一站式建材出海</div></div>
+              <div class="tl-card" data-doubao-translate-traverse-mark="1"><span class="card-icon" data-doubao-translate-traverse-mark="1">🎉</span><h3 data-doubao-translate-traverse-mark="1">敬城建材正式成立</h3><p data-doubao-translate-traverse-mark="1">随着豪灯城业务日趋成熟，George 启动了品牌升级计划。2017 年，<span class="highlight-text">敬城建材</span>正式宣布成立，定位为面向海外客户的一站式建材产品与服务提供商。同期确定意美家市场 24 栋 2 楼为未来总部选址。</p><div class="card-footer" data-doubao-translate-traverse-mark="1">品牌升级 · 一站式建材出海</div></div>
               <div class="tl-spacer" data-doubao-translate-traverse-mark="1"></div>
             </div>
             <div class="tl-item visible" id="tl-item-3" style="animation-delay:0.36s" data-doubao-translate-traverse-mark="1">
@@ -2339,6 +2440,26 @@
 <button class="btn-primary" id="timeline-done-btn" onclick="ct()" data-doubao-translate-traverse-mark="1">我已阅读完毕，开始答题 →</button>
 </div>
 </section>
+<!-- SECTION: PARTICIPANT INFO -->
+<section class="section" id="participant-section" style="display:none;" data-doubao-translate-traverse-mark="1">
+  <div class="section-header" data-doubao-translate-traverse-mark="1">
+    <span class="section-badge" data-doubao-translate-traverse-mark="1">Info</span>
+    <h2 class="section-title" data-doubao-translate-traverse-mark="1">参与者信息</h2>
+    <p class="section-subtitle" data-doubao-translate-traverse-mark="1">请输入你的部门与姓名，信息将用于后续答题与成绩统计</p>
+    <div class="section-divider" data-doubao-translate-traverse-mark="1"></div>
+  </div>
+  <div class="participant-form" data-doubao-translate-traverse-mark="1">
+    <div class="form-group" data-doubao-translate-traverse-mark="1">
+      <label for="participant-dept" data-doubao-translate-traverse-mark="1">所在部门</label>
+      <input type="text" id="participant-dept" placeholder="如：某创客中心、某产品平台" data-doubao-translate-traverse-mark="1">
+    </div>
+    <div class="form-group" data-doubao-translate-traverse-mark="1">
+      <label for="participant-name" data-doubao-translate-traverse-mark="1">姓名</label>
+      <input type="text" id="participant-name" placeholder="请输入你的姓名" data-doubao-translate-traverse-mark="1">
+    </div>
+    <button class="btn-primary" id="participant-submit-btn" onclick="submitParticipantInfo()" data-doubao-translate-traverse-mark="1">确认信息，开始答题 →</button>
+  </div>
+</section>
 <!-- SECTION 2: HISTORY QUIZ (Hidden initially) -->
 <section class="section" id="history-quiz-section" style="display:none;" data-doubao-translate-traverse-mark="1">
 <div class="section-header" data-doubao-translate-traverse-mark="1">
@@ -2393,6 +2514,7 @@
 <span class="section-badge" data-doubao-translate-traverse-mark="1">Quiz 02</span>
 <h2 class="section-title" data-doubao-translate-traverse-mark="1">价值观测验</h2>
 <p class="section-subtitle" data-doubao-translate-traverse-mark="1">选错可重试，直到答对才进入下一题</p>
+<div class="participant-banner" id="values-participant-banner" data-doubao-translate-traverse-mark="1"></div>
 <div class="section-divider" data-doubao-translate-traverse-mark="1"></div>
 </div>
 <div class="quiz-obo-wrap" id="values-quiz-obo" data-doubao-translate-traverse-mark="1"><div class="quiz-progress-top"><span class="qp-dot current"></span><span class="qp-dot"></span><span class="qp-dot"></span><span class="qp-dot"></span><span class="qp-dot"></span><span class="qp-dot"></span></div><div class="quiz-obo-qnum">Question 1 / 6</div><div class="quiz-obo-question">以下哪项不属于敬城的核心价值观？</div><div class="quiz-obo-options" id="values-opts"><button class="quiz-obo-opt" data-o="0" onclick="avq(0,this)">A. 客户第一</button><button class="quiz-obo-opt" data-o="1" onclick="avq(1,this)">B. 诚信守正</button><button class="quiz-obo-opt" data-o="2" onclick="avq(2,this)">C. 创业奋斗</button><button class="quiz-obo-opt" data-o="3" onclick="avq(3,this)">D. 利润至上</button></div><div class="quiz-obo-feedback" id="values-feedback"></div><div class="quiz-obo-retry-hint" id="values-retry-hint"></div><button class="quiz-obo-next" id="values-next-btn" onclick="nvq()">下一题 →</button></div>
@@ -2594,6 +2716,7 @@
 <span class="section-badge" data-doubao-translate-traverse-mark="1">Games</span>
 <h2 class="section-title" data-doubao-translate-traverse-mark="1">趣味游戏挑战</h2>
 <p class="section-subtitle" data-doubao-translate-traverse-mark="1">通过游戏加深对价值观的理解，完成所有挑战即可通关</p>
+<div class="participant-banner" id="games-participant-banner" data-doubao-translate-traverse-mark="1"></div>
 <div class="section-divider" data-doubao-translate-traverse-mark="1"></div>
 </div>
 <div class="games-tabs" data-doubao-translate-traverse-mark="1">
@@ -2637,6 +2760,16 @@
 <button class="btn-accent" id="shooting-done-btn" onclick="completeShootingGame()" style="display:none;" data-doubao-translate-traverse-mark="1">挑战成功！确认通关 🎉</button>
 </div>
 <div class="quiz-result" id="shooting-result" style="text-align:center;margin-top:12px;font-weight:600;" data-doubao-translate-traverse-mark="1"></div>
+</div>
+<!-- FINAL SUMMARY -->
+<div class="game-panel" id="panel-summary" data-doubao-translate-traverse-mark="1">
+  <div class="final-summary-card" data-doubao-translate-traverse-mark="1">
+    <div class="summary-icon" data-doubao-translate-traverse-mark="1">🏆</div>
+    <h3 data-doubao-translate-traverse-mark="1">学习通关总结</h3>
+    <div class="participant-result-name" id="summary-name" data-doubao-translate-traverse-mark="1"></div>
+    <div class="summary-stats" id="summary-stats" data-doubao-translate-traverse-mark="1"></div>
+    <button class="btn-primary" onclick="location.reload()" data-doubao-translate-traverse-mark="1">再学一次 ↻</button>
+  </div>
 </div>
 </section>
 <!-- REINFORCEMENT MODAL -->
@@ -2693,7 +2826,7 @@
                 story: '在石之城石材经营部旁成立<span class="highlight-text">豪灯城灯饰店</span>，代理雷士照明，正式踏入灯饰零售领域，实现品类扩展。创业初期团队规模有限，但凭借对产品质量的执着和对客户服务的重视，逐步积累了宝贵的行业经验与市场口碑，为后续业务拓展奠定了基础。',
                 footer: '早期探索 · 品类扩展' },
             { year: '2017', month: '成立', icon: '🎉', title: '敬城建材正式成立',
-                story: '随着豪灯城业务日趋成熟，George 启动了品牌升级计划。2017 年，<span class="highlight-text">敬城建材</span>正式宣布成立，定位为面向海外客户的一站式建材产品与服务提供商。同期确定意美家市场 24 栋 2 楼为未来总部选址，开启了从本地零售到国际化服务的第一步。',
+                story: '随着豪灯城业务日趋成熟，George 启动了品牌升级计划。2017 年，<span class="highlight-text">敬城建材</span>正式宣布成立，定位为面向海外客户的一站式建材产品与服务提供商。同期确定意美家市场 24 栋 2 楼为未来总部选址。',
                 footer: '品牌升级 · 一站式建材出海' },
             { year: '2018', month: '总部', icon: '🏢', title: '签下意美家总部合同',
                 story: '2018 年 3 月，正式签署<span class="highlight-text">意美家市场总部租赁合同</span>，启动总部展厅建设项目。该项目投资规模较大，在推进过程中面临资金调度与工程管理的双重考验。最终团队克服困难，确保项目按计划推进。',
@@ -2723,8 +2856,8 @@
                 reinforce: 'George 于 <span class="highlight">2014年6月</span> 正式踏上创业之路，当时不到20岁。', icon: '🌟' },
             { q: '公司最早的门店叫什么名字？', opts: ['敬城建材', '豪灯城', '敬之城', '意美家'], ans: 1,
                 reinforce: '最早的门店是<span class="highlight">豪灯城</span>——一家灯饰零售门店，也是敬城事业的起点。', icon: '💡' },
-            { q: '敬城建材是在哪一年哪一月正式宣布成立的？', opts: ['2016年3月', '2017年7月', '2018年3月', '2018年10月'], ans: 1,
-                reinforce: '<span class="highlight">2017年7月</span>，敬城建材正式宣布成立，定位一站式建材出海服务。', icon: '🎉' },
+            { q: '敬城建材是在哪一年正式宣布成立的？', opts: ['2016年', '2017年', '2018年', '2019年'], ans: 1,
+                reinforce: '<span class="highlight">2017年</span>，敬城建材正式宣布成立，定位一站式建材出海服务。', icon: '🎉' },
             { q: '意美家总部租赁合同是什么时候签署的？', opts: ['2017年7月', '2017年12月', '2018年3月', '2018年10月'], ans: 2,
                 reinforce: '<span class="highlight">2018年3月</span>，正式签署意美家市场总部租赁合同，启动总部展厅建设。', icon: '🏢' },
             { q: '到2019年底，敬城团队规模从多少人发展到多少人？', opts: ['10人→60人', '不到20人→130人', '30人→200人', '50人→150人'],
@@ -2761,6 +2894,9 @@
         let completedSteps = new Array(TOTAL_STEPS).fill(false);
         let historyQuizState = { currentQ: 0, attempts: [], allCorrect: [], solved: [] };
         let valuesQuizState = { currentQ: 0, attempts: [], allCorrect: [], solved: [] };
+        let participant = { name: '', dept: '' };
+        let sessionStartTime = null;
+        let sessionStats = { historyAttempts: 0, historyCorrect: 0, valuesAttempts: 0, valuesCorrect: 0, matchWrong: 0, shootingScore: 0 };
 
         // ==================== CONFETTI ====================
         const cc = document.getElementById('confetti-canvas');
@@ -2820,8 +2956,7 @@
                     'active'); if (completedSteps[i]) o.classList.add('done'); });
             const fi = completedSteps.indexOf(false);
             if (fi >= 0) document.querySelectorAll('#progress-steps .step-dot')[fi].classList.add('active');
-            if (d === TOTAL_STEPS) setTimeout(() => document.getElementById('completion-modal').classList.add('show'),
-                700);
+            if (d === TOTAL_STEPS) setTimeout(() => lc(), 700);
             localStorage.setItem('jc_progress', JSON.stringify(completedSteps));
         }
 
@@ -2868,11 +3003,30 @@
             document.getElementById('timeline-done-btn').classList.add('done');
             document.getElementById('timeline-done-btn').textContent = '✓ 已完成阅读';
             document.getElementById('timeline-section').classList.add('quiz-active');
+            document.getElementById('participant-section').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('participant-section').scrollIntoView({ behavior: 'smooth' });
+            }, 300); }
+
+        function submitParticipantInfo() {
+            const dept = document.getElementById('participant-dept').value.trim();
+            const name = document.getElementById('participant-name').value.trim();
+            if (!dept || !name) { alert('请填写部门和姓名'); return; }
+            participant.dept = dept;
+            participant.name = name;
+            sessionStartTime = Date.now();
+            document.getElementById('participant-submit-btn').classList.add('done');
+            document.getElementById('participant-submit-btn').textContent = '✓ 已确认';
             document.getElementById('history-quiz-section').style.display = 'block';
             setTimeout(() => {
                 document.getElementById('history-quiz-section').scrollIntoView({ behavior: 'smooth' });
                 ihq();
             }, 300); }
+
+        function updateParticipantBanner(targetId) {
+            if (!participant.name) return;
+            const el = document.getElementById(targetId);
+            if (el) el.innerHTML = `👤 <span class="highlight-text">${participant.dept}</span> · ${participant.name}`; }
 
         // ==================== HISTORY QUIZ ====================
         function ihq() { historyQuizState = { currentQ: 0, attempts: new Array(historyQuestions.length).fill(0),
@@ -2890,6 +3044,8 @@
                 w.innerHTML =
                     `<div class="quiz-summary"><div class="big-score">${cc2}/${t}</div><div class="summary-msg" style="color:${p?'var(--green-600)':'var(--red-600)'}">${p?'🎉 恭喜通过！你对公司发展历程非常了解！':'😅 未通过（需答对≥3题），请重新作答'}</div><div style="margin-top:14px;display:flex;gap:10px;justify-content:center;">${historyQuizState.solved.map((c,idx)=>`<span class="qp-dot ${c?'correct':'wrong-dot'}"></span>`).join('')}</div>${p?'':'<button class="btn-accent" style="margin-top:18px;" onclick="rthq()">🔄 重新答题</button>'}</div>`;
                 if (p) { ms(1);
+                    sessionStats.historyAttempts = historyQuizState.attempts.reduce((a,b)=>a+b,0);
+                    sessionStats.historyCorrect = cc2;
                     document.getElementById('timeline-section').classList.remove('quiz-active');
                     setTimeout(() => document.getElementById('values-section').scrollIntoView({ behavior: 'smooth' }),
                         1600); }
@@ -2956,6 +3112,7 @@
             document.getElementById('values-done-btn').textContent = '✓ 已完成阅读';
             document.getElementById('values-section').classList.add('quiz-active');
             document.getElementById('values-quiz-section').style.display = 'block';
+            updateParticipantBanner('values-participant-banner');
             setTimeout(() => {
                 document.getElementById('values-quiz-section').scrollIntoView({ behavior: 'smooth' });
                 ivq();
@@ -2977,9 +3134,13 @@
                 w.innerHTML =
                     `<div class="quiz-summary"><div class="big-score">${cc2}/${t}</div><div class="summary-msg" style="color:${p?'var(--green-600)':'var(--red-600)'}">${p?'🎉 恭喜通过！价值观已深深烙印！':'😅 未通过（需答对≥4题），请重新作答'}</div><div style="margin-top:14px;display:flex;gap:10px;justify-content:center;">${valuesQuizState.solved.map((c,idx)=>`<span class="qp-dot ${c?'correct':'wrong-dot'}"></span>`).join('')}</div>${p?'':'<button class="btn-accent" style="margin-top:18px;" onclick="rtvq()">🔄 重新答题</button>'}</div>`;
                 if (p) { ms(3);
+                    sessionStats.valuesAttempts = valuesQuizState.attempts.reduce((a,b)=>a+b,0);
+                    sessionStats.valuesCorrect = cc2;
                     document.getElementById('values-section').classList.remove('quiz-active');
-                    setTimeout(() => document.getElementById('games-section').scrollIntoView({ behavior: 'smooth' }),
-                        1600); }
+                    setTimeout(() => {
+                        updateParticipantBanner('games-participant-banner');
+                        document.getElementById('games-section').scrollIntoView({ behavior: 'smooth' });
+                    }, 1600); }
                 return;
             }
             const q = valuesQuestions[i];
@@ -3057,7 +3218,8 @@
         // ==================== CARD MATCH ====================
         let mf = [],
             ml = false,
-            mc = 0;
+            mc = 0,
+            matchWrong = 0;
 
         function bmg() {
             const g = document.getElementById('card-match-grid');
@@ -3072,6 +3234,7 @@
             mf = [];
             ml = false;
             mc = 0;
+            matchWrong = 0;
             document.getElementById('match-status').innerHTML = '🔍 翻牌找出价值观与其含义的配对 · 已匹配 <strong>0/5</strong>';
             document.getElementById('match-done-btn').style.display = 'none';
         }
@@ -3091,6 +3254,7 @@
                             document.getElementById('match-done-btn').style.display = 'block';
                             lc(); } }, 550); } else setTimeout(() => { a.classList.remove('flipped');
                     b.classList.remove('flipped');
+                    matchWrong++;
                     mf = [];
                     ml = false; }, 850); } }
 
@@ -3425,6 +3589,31 @@
         function csg() { ms(5);
             document.getElementById('shooting-done-btn').disabled = true;
             document.getElementById('shooting-done-btn').textContent = '✓ 已通关';
+            sessionStats.shootingScore = ss;
+            showFinalSummary(); }
+
+        function showFinalSummary() {
+            const endTime = Date.now();
+            const totalSeconds = sessionStartTime ? Math.round((endTime - sessionStartTime) / 1000) : 0;
+            const minutes = Math.floor(totalSeconds / 60);
+            const seconds = totalSeconds % 60;
+            const timeStr = minutes > 0 ? `${minutes}分${seconds}秒` : `${seconds}秒`;
+            const totalQuizAttempts = sessionStats.historyAttempts + sessionStats.valuesAttempts;
+            const totalQuizCorrect = sessionStats.historyCorrect + sessionStats.valuesCorrect;
+            const totalQuizWrong = totalQuizAttempts - totalQuizCorrect;
+            const accuracy = totalQuizAttempts > 0 ? Math.round((totalQuizCorrect / totalQuizAttempts) * 100) : 0;
+            document.getElementById('summary-name').innerHTML = `👤 <span class="highlight-text">${participant.dept}</span> · ${participant.name}`;
+            document.getElementById('summary-stats').innerHTML = `
+                <div class="stat-box"><div class="stat-value">${timeStr}</div><div class="stat-label">总用时</div></div>
+                <div class="stat-box"><div class="stat-value">${accuracy}%</div><div class="stat-label">答题准确率</div></div>
+                <div class="stat-box"><div class="stat-value">${totalQuizWrong}</div><div class="stat-label">错题数</div></div>
+                <div class="stat-box"><div class="stat-value">${sessionStats.shootingScore}</div><div class="stat-label">射击游戏得分</div></div>
+                <div class="stat-box"><div class="stat-value">${sessionStats.matchWrong}</div><div class="stat-label">翻牌失误</div></div>
+                <div class="stat-box"><div class="stat-value">${totalQuizCorrect}/${totalQuizAttempts}</div><div class="stat-label">答题正确数</div></div>`;
+            document.querySelectorAll('.games-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.game-panel').forEach(p => p.classList.remove('active'));
+            document.getElementById('panel-summary').classList.add('active');
+            document.getElementById('games-section').scrollIntoView({ behavior: 'smooth' });
             lc(); }
 
         function sg(g) { document.querySelectorAll('.games-tab').forEach(t => t.classList.remove('active'));
